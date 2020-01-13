@@ -41,3 +41,18 @@ puts last_index("programming", "m")#=> 7
 
 # Write a method most_vowels that takes in a sentence string and returns the word of the sentence that contains the most vowels.
 
+def most_vowels(sentence)
+  hash = Hash.new
+    sentence.split(" ").each do |words|
+      hash[words] = count(words)
+    end
+  
+  hash.sort[-1][0]
+    
+end
+
+def count(words)
+  words.each_char.count { |word| "aeiou".include?(word)}
+end
+
+print most_vowels("what a wonderful life") #=> "wonderful"
