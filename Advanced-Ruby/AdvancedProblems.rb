@@ -79,6 +79,7 @@ puts prime?(25) #=> false
 def pick_primes(numbers)
 	numbers.select { |num| prime?(num)}
 end
+
 def prime?(num)
   return false if num < 2
     (2...num).each do |n|
@@ -95,8 +96,9 @@ puts
 # Write a method prime_factors that takes in a number and returns an array containing all of the prime factors of the given number.
 
 def prime_factors(num)
-(2...num).select { |n| prime?(n) && num % n == 0}
+  (2...num).select { |n| prime?(n) && num % n == 0}
 end
+
 def prime?(num)
   (2...num).each do |n|
     return false if num % n == 0
