@@ -28,10 +28,10 @@ puts
 
 def last_index(str, char)
 	i = str.length - 1
-  while i >= 0
-    return i if char == str[i]
-    i -= 1
-  end
+    while i >= 0
+      return i if char == str[i]
+      i -= 1
+    end
 end
 
 puts last_index("abca", "a")       #=> 3
@@ -46,9 +46,7 @@ def most_vowels(sentence)
     sentence.split(" ").each do |words|
       hash[words] = count(words)
     end
-  
   hash.sort[-1][0]
-    
 end
 
 def count(words)
@@ -61,9 +59,11 @@ print most_vowels("what a wonderful life") #=> "wonderful"
 
 def prime?(num)
 return false if num < 2
+
   (2...num).each do |n|
     return false if num % n == 0
   end
+
   true
 end
 
