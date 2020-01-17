@@ -91,3 +91,19 @@ print pick_primes([2, 3, 4, 5, 6]) #=> [2, 3, 5]
 puts
 print pick_primes([101, 20, 103, 2017]) #=> [101, 103, 2017]
 puts
+
+# Write a method prime_factors that takes in a number and returns an array containing all of the prime factors of the given number.
+
+def prime_factors(num)
+(2...num).select { |n| prime?(n) && num % n == 0}
+end
+def prime?(num)
+  (2...num).each do |n|
+    return false if num % n == 0
+  end
+  true
+end
+print prime_factors(24) #=> [2, 3]
+puts
+print prime_factors(60) #=> [2, 3, 5]
+puts
